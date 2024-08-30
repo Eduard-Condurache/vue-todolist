@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TEMPLATE HTML CSS JS VUE</title>
+        <title>Vue To Do List</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="css/style.css">
@@ -21,9 +21,16 @@
             <main>
                 <div class="container">
                     <h1>Todo List di Edu</h1>
+                    <div>
+                        <input @keyup.enter="addTodo()" v-model="newTodo" type="text">
+                        <button @click="addTodo()">
+                            Aggiungi task
+                        </button>
+                    </div>
                     <ul>
                         <li 
-                            v-for="todo in todos"
+                            @click="invertedValue(todo)"
+                            v-for="(todo, index) in todos"
                             :class="{ donetask: todo.done }"> <!-- :class="todo.done ? if(true)'done' : else(false)''" -->
                             {{ todo.text }}
 

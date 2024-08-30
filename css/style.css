@@ -18,3 +18,7 @@ html {
 .donetask {
     text-decoration-line: line-through;
 }
+
+.container ul > li {
+    cursor: pointer;
+}
