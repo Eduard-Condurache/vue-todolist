@@ -23,4 +23,9 @@ createApp({
        ]
     };
   },
+  methods: {
+    removeTodo(i) {
+      this.todos.splice(i, 1); // Il metodo splice in questo caso rimuove un elemento dal array.
+    }
+  }
 }).mount('#app')

@@ -24,10 +24,15 @@
                     <ul>
                         <li 
                             v-for="todo in todos"
-                            :class="todo.done ? 'donetask' : ''">
+                            :class="{ donetask: todo.done }"> <!-- :class="todo.done ? if(true)'done' : else(false)''" -->
                             {{ todo.text }}
+
+                            <button @click="removeTodo(index)">
+                                X
+                            </button>
                         </li>
                     </ul>
+
                 </div>
             </main>
         </div>
